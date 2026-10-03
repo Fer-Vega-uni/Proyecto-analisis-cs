@@ -16,6 +16,7 @@ RUN curl -sSfL https://github.com/github/codeql-action/releases/download/codeql-
         -o /tmp/codeql.tar.gz \
     && tar -xzf /tmp/codeql.tar.gz -C /opt \
     && ln -s /opt/codeql/codeql /usr/local/bin/codeql \
+    && chown -R vscode:vscode /opt/codeql \
     && rm /tmp/codeql.tar.gz
 
 # Verificación de herramientas instaladas
