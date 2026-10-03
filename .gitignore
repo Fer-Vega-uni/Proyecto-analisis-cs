@@ -1,0 +1,10 @@
+# Entorno
+.venv/
+__pycache__/
+.DS_Store
+
+# Credenciales (nunca subir)
+.env
+
+# Repositorios clonados por el Miner
+miner/repos/
