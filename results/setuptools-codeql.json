@@ -1,0 +1,71 @@
+{
+  "repo": "setuptools",
+  "analysis": "code",
+  "language": "python",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 5,
+  "findings": [
+    {
+      "rule_id": "py/overly-permissive-file",
+      "rule_name": "Overly permissive file permissions",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-732",
+      "message": "Overly permissive mask in chmod sets file to world writable.",
+      "file": "setuptools/_distutils/tests/test_spawn.py",
+      "start_line": 30,
+      "end_line": 30
+    },
+    {
+      "rule_id": "py/overly-permissive-file",
+      "rule_name": "Overly permissive file permissions",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-732",
+      "message": "Overly permissive mask in chmod sets file to world writable.",
+      "file": "setuptools/_distutils/tests/test_spawn.py",
+      "start_line": 42,
+      "end_line": 42
+    },
+    {
+      "rule_id": "py/overly-permissive-file",
+      "rule_name": "Overly permissive file permissions",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-732",
+      "message": "Overly permissive mask in open sets file to world writable.",
+      "file": "setuptools/_vendor/backports/tarfile/__init__.py",
+      "start_line": 320,
+      "end_line": 320
+    },
+    {
+      "rule_id": "py/bad-tag-filter",
+      "rule_name": "Bad HTML filtering regexp",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-116, CWE-20, CWE-185, CWE-186",
+      "message": "Comments ending with --> are matched differently from comments ending with --!>. The first is matched with capture group 1 and comments ending with --!> are matched with capture group 2.",
+      "file": "setuptools/_vendor/jaraco/text/__init__.py",
+      "start_line": 410,
+      "end_line": 410
+    },
+    {
+      "rule_id": "py/overly-permissive-file",
+      "rule_name": "Overly permissive file permissions",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-732",
+      "message": "Overly permissive mask in chmod sets file to world writable.",
+      "file": "setuptools/tests/test_wheel.py",
+      "start_line": 625,
+      "end_line": 625
+    }
+  ]
+}

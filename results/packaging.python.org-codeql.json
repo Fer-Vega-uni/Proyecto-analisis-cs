@@ -1,0 +1,23 @@
+{
+  "repo": "packaging.python.org",
+  "analysis": "code",
+  "language": "python",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 1,
+  "findings": [
+    {
+      "rule_id": "py/incomplete-url-substring-sanitization",
+      "rule_name": "Incomplete URL substring sanitization",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-20",
+      "message": "The string [packaging.python.org](1) may be at an arbitrary position in the sanitized URL.",
+      "file": "source/conf.py",
+      "start_line": 16,
+      "end_line": 16
+    }
+  ]
+}

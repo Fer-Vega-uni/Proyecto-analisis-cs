@@ -1,8 +1,8 @@
-# Análisis de vulnerabilidades en repositorios de Scrapy
+# Análisis de vulnerabilidades en repositorios de PyPA
 
 Proyecto semestral de Ciberseguridad (ICC610), Universidad de La Frontera.
 
-La solución detecta, analiza y visualiza vulnerabilidades en los repositorios públicos de la organización [Scrapy](https://github.com/scrapy), y además audita la seguridad de este mismo repositorio.
+La solución detecta, analiza y visualiza vulnerabilidades en los repositorios públicos de la [Python Packaging Authority (PyPA)](https://github.com/pypa), el grupo que mantiene las herramientas oficiales de empaquetado de Python (pip, virtualenv, setuptools, entre otras), y además audita la seguridad de este mismo repositorio.
 
 ## Arquitectura
 
@@ -73,7 +73,7 @@ Cada paso omite lo que ya fue procesado, así que si la ejecución se interrumpe
 | 4. Analizar dependencias | `generate_grype.py` | `results/<repo>-grype.json` |
 | 5. Construir el dataset | `build_dataset.py` | `results/dataset/findings.csv`, `results/dataset/repos.csv` |
 
-La ejecución completa sobre los 22 repositorios toma alrededor de 15 minutos.
+La ejecución completa sobre los 38 repositorios de PyPA toma alrededor de 30 minutos (la mayor parte corresponde a CodeQL).
 
 ### Dataset
 
@@ -100,26 +100,42 @@ repos = pd.read_csv("results/dataset/repos.csv")
 | `score` | Puntaje numérico de 0 a 10 (`security-severity` en CodeQL, CVSS en Grype) |
 | `file` | Archivo donde está el hallazgo (o manifiesto donde se declara la dependencia) |
 | `start_line` | Línea del hallazgo; solo CodeQL |
-| `area` | `source`, `test`, `docs`, `example` o `ci`, según la carpeta del archivo |
+| `area` | `source` (código o dependencias propias), `vendor` (código de terceros copiado dentro del repo), `test`, `docs`, `example` o `ci`, según la carpeta del archivo |
 | `package`, `version`, `ecosystem` | Dependencia afectada; solo Grype |
 | `fix_versions` | Versión que corrige la vulnerabilidad; solo Grype |
 | `message` | Descripción del hallazgo |
 
-**`repos.csv`**: una fila por repositorio analizado, incluidos los que no tienen hallazgos. Contiene URL, lenguaje, estrellas, commit analizado (`commit_sha`), número de dependencias (`packages`), estado de cada herramienta y conteos de hallazgos por tipo y por severidad.
+**`repos.csv`**: una fila por repositorio analizado, incluidos los que no tienen hallazgos. Contiene URL, lenguaje según GitHub (`language`), lenguaje analizado por CodeQL (`analyzed_language`), estrellas, commit analizado (`commit_sha`), número de dependencias (`packages`), estado de cada herramienta y conteos de hallazgos por tipo y por severidad.
+
+### Resultados
+
+Se analizaron 38 repositorios (37 en Python y 1 en TypeScript) y se obtuvieron 311 hallazgos: 3 critical, 120 high, 161 medium y 27 low.
+
+| Tipo | Hallazgos | Detalle por área |
+|---|---|---|
+| Código (CodeQL) | 77 | 18 en código propio, 42 en pruebas, 17 en código de terceros copiado (`vendor`) |
+| Workflows de CI/CD (CodeQL) | 78 | Todos en `.github/workflows` |
+| Dependencias (Grype) | 156 | 129 en manifiestos del proyecto, 27 en archivos de ejemplo |
+
+28 de los 38 repositorios tienen al menos un hallazgo.
 
 ### Decisiones de diseño
 
-- **Organización:** Scrapy fue elegida porque sus repositorios están escritos principalmente en Python, lo que permite analizarlos con CodeQL sin compilar.
-- **Selección de repositorios:** se excluyen forks y repositorios archivados, y se consideran solo los de Python, JavaScript o TypeScript, ordenados por estrellas. Con estos filtros quedan 22 repositorios. Si fueran menos de 20, el Miner incluye automáticamente los archivados.
+- **Organización:** primero se analizó [Scrapy](https://github.com/scrapy) (26 repositorios), pero entregó solo 38 hallazgos, concentrados en 2 repositorios. Se probaron Jazzband y PyPA con sus 3 repositorios más populares, y se eligió PyPA por la cantidad de hallazgos y por su relevancia: sus herramientas forman parte de la cadena de suministro de casi todo el software de Python. Los resultados de Scrapy se conservan en la etiqueta `analisis-scrapy` del repositorio.
+- **Selección de repositorios:** se excluyen forks, repositorios archivados y repositorios sin código Python, JavaScript o TypeScript. Como GitHub asigna el lenguaje principal según los bytes de cada lenguaje, algunas librerías de Python quedan etiquetadas como HTML por sus archivos de prueba; en esos casos el Miner consulta los lenguajes reales del repositorio. Se descartan los lenguajes compilados (C, C++, Shell, etc.), que CodeQL solo puede analizar compilando el proyecto. De los 59 repositorios de PyPA quedan 38, todos dentro del límite de 50, por lo que se analiza la totalidad de los repositorios útiles.
 - **Reproducibilidad:** las herramientas tienen versiones fijas, los repositorios se clonan con `--depth 1` y se registra el commit exacto analizado de cada uno.
 - **CodeQL:** se usa la suite `security-extended`, que se enfoca en seguridad con pocos falsos positivos. Además del código fuente, se analizan los workflows de GitHub Actions para detectar problemas en CI/CD.
 - **Severidad:** en CodeQL se usa el puntaje `security-severity` de cada regla (≥ 9 critical, ≥ 7 high, ≥ 4 medium, > 0 low), en vez del nivel genérico del SARIF. En Grype se usa la severidad que entrega la herramienta, y el CVSS se guarda aparte. Ambas quedan en la misma escala.
 - **Syft y Grype:** Grype analiza el SBOM generado por Syft, de modo que ambas herramientas trabajan sobre el mismo inventario de dependencias.
+- **Área del hallazgo:** cada hallazgo se clasifica según su ubicación (`source`, `vendor`, `test`, `docs`, `example`, `ci`), para distinguir el código propio de las pruebas, los ejemplos y el código de terceros.
 - **Evidencia:** se conservan los SARIF originales de CodeQL en `results/sarif/` para que cada hallazgo pueda verificarse.
 
 ### Limitaciones conocidas
 
-- Grype solo puede comparar versiones exactas. Como la mayoría de las librerías de Python declaran rangos de versiones (ej. `lxml>=4.6`), las dependencias detectadas como vulnerables provienen casi solo de archivos con versiones fijas, como `docs/requirements.txt`.
+- **Código copiado (vendoring):** pip incluye copias de otras librerías en `src/pip/_vendor/`, y pipenv incluye una copia completa de pip. CodeQL detecta los mismos hallazgos en cada copia, por lo que algunos se repiten entre repositorios. Estas copias no aparecen como dependencias declaradas, así que Syft y Grype no las registran.
+- **Grype solo compara versiones exactas:** los proyectos que fijan versiones (por ejemplo con `uv.lock` o `requirements.txt` con `==`) muestran más vulnerabilidades que los que declaran rangos (`>=`), aunque fijar versiones sea una mejor práctica. La cantidad de vulnerabilidades de dependencias refleja en parte cuánta información de versiones tiene cada repositorio.
+- **Archivos de ejemplo:** algunos hallazgos de dependencias provienen de archivos de ejemplo (como `examples/Pipfile.lock` en `pipfile`); se identifican con el área `example`.
+- **Lenguaje principal:** CodeQL analiza solo el lenguaje principal de cada repositorio.
 - La severidad de Grype (tomada de GitHub Advisories) y el CVSS (que puede venir de NVD) a veces no coinciden, porque provienen de fuentes distintas.
 
 ## Analyzer

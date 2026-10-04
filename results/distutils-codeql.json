@@ -1,0 +1,35 @@
+{
+  "repo": "distutils",
+  "analysis": "code",
+  "language": "python",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 2,
+  "findings": [
+    {
+      "rule_id": "py/overly-permissive-file",
+      "rule_name": "Overly permissive file permissions",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-732",
+      "message": "Overly permissive mask in chmod sets file to world writable.",
+      "file": "distutils/tests/test_spawn.py",
+      "start_line": 30,
+      "end_line": 30
+    },
+    {
+      "rule_id": "py/overly-permissive-file",
+      "rule_name": "Overly permissive file permissions",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-732",
+      "message": "Overly permissive mask in chmod sets file to world writable.",
+      "file": "distutils/tests/test_spawn.py",
+      "start_line": 42,
+      "end_line": 42
+    }
+  ]
+}

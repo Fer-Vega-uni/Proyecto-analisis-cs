@@ -1,0 +1,23 @@
+{
+  "repo": "build",
+  "analysis": "code",
+  "language": "python",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 1,
+  "findings": [
+    {
+      "rule_id": "py/tarslip",
+      "rule_name": "Arbitrary file write during tarfile extraction",
+      "severity": "high",
+      "security_severity": 7.5,
+      "level": "error",
+      "cwe": "CWE-22",
+      "message": "This file extraction depends on a [potentially untrusted source](1).",
+      "file": "tests/test_integration.py",
+      "start_line": 57,
+      "end_line": 57
+    }
+  ]
+}

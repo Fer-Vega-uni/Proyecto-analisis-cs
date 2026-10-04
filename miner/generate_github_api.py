@@ -32,7 +32,7 @@ RUTA_BASE = Path(__file__).resolve().parents[1]
 RUTA_REPOS = RUTA_BASE / "miner" / "repos"
 RUTA_RESULTADOS = RUTA_BASE / "results"
 
-ORGANIZACION = "scrapy"
+ORGANIZACION = "pypa"
 LENGUAJES_SOPORTADOS = ["Python", "JavaScript", "TypeScript"]
 # Lenguajes compilados: CodeQL necesita compilar estos proyectos, así que se excluyen
 # aunque contengan algunos archivos Python o JavaScript.

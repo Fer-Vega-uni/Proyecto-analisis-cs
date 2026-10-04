@@ -1,0 +1,35 @@
+{
+  "repo": "twine",
+  "analysis": "code",
+  "language": "python",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 2,
+  "findings": [
+    {
+      "rule_id": "py/incomplete-url-substring-sanitization",
+      "rule_name": "Incomplete URL substring sanitization",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-20",
+      "message": "The string [pypi.python.org](1) may be at an arbitrary position in the sanitized URL.",
+      "file": "twine/utils.py",
+      "start_line": 260,
+      "end_line": 260
+    },
+    {
+      "rule_id": "py/incomplete-url-substring-sanitization",
+      "rule_name": "Incomplete URL substring sanitization",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-20",
+      "message": "The string [pypi.org](1) may be at an arbitrary position in the sanitized URL.",
+      "file": "twine/utils.py",
+      "start_line": 270,
+      "end_line": 270
+    }
+  ]
+}

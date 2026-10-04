@@ -1,0 +1,23 @@
+{
+  "repo": "packaging",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 1,
+  "findings": [
+    {
+      "rule_id": "actions/untrusted-checkout/medium",
+      "rule_name": "Checkout of untrusted code in a non-privileged context",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Potential unsafe checkout of untrusted pull request on non-privileged workflow.",
+      "file": ".github/workflows/publish.yml",
+      "start_line": 34,
+      "end_line": 41
+    }
+  ]
+}

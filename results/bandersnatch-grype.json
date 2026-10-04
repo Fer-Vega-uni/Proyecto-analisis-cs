@@ -1,0 +1,53 @@
+{
+  "repo": "bandersnatch",
+  "analysis": "dependencies",
+  "grype_version": "0.120.0",
+  "status": "ok",
+  "error": null,
+  "total_findings": 3,
+  "findings": [
+    {
+      "vuln_id": "GHSA-8988-9cw3-xx77",
+      "cve": "CVE-2026-97687",
+      "severity": "high",
+      "cvss_score": 7.6,
+      "package": "urllib3",
+      "version": "2.7.0",
+      "ecosystem": "python",
+      "fix_state": "fixed",
+      "fix_versions": "2.8.0",
+      "file": "requirements_s3.txt",
+      "description": "urllib3: HTTPS proxy TLS configuration may be ignored or overridden",
+      "url": "https://github.com/advisories/GHSA-8988-9cw3-xx77"
+    },
+    {
+      "vuln_id": "GHSA-gh4c-6fx4-qh6g",
+      "cve": "CVE-2026-97688",
+      "severity": "medium",
+      "cvss_score": 6.9,
+      "package": "urllib3",
+      "version": "2.7.0",
+      "ecosystem": "python",
+      "fix_state": "fixed",
+      "fix_versions": "2.8.0",
+      "file": "requirements_s3.txt",
+      "description": "urllib3: Chunked Deflate streaming can enter an infinite loop",
+      "url": "https://github.com/advisories/GHSA-gh4c-6fx4-qh6g"
+    },
+    {
+      "vuln_id": "GHSA-vxq7-64xx-v4gw",
+      "cve": "CVE-2026-97689",
+      "severity": "high",
+      "cvss_score": 8.9,
+      "package": "urllib3",
+      "version": "2.7.0",
+      "ecosystem": "python",
+      "fix_state": "fixed",
+      "fix_versions": "2.8.0",
+      "file": "requirements_s3.txt",
+      "description": "urllib3: HTTPResponse.stream()/read_chunked() buffers an unbounded chunk-size line into memory",
+      "url": "https://github.com/advisories/GHSA-vxq7-64xx-v4gw"
+    }
+  ],
+  "db_built": "2026-10-03T06:31:58Z"
+}

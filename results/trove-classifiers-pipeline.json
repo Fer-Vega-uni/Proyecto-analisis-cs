@@ -1,0 +1,47 @@
+{
+  "repo": "trove-classifiers",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 3,
+  "findings": [
+    {
+      "rule_id": "actions/missing-workflow-permissions",
+      "rule_name": "Workflow does not contain permissions",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-275",
+      "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+      "file": ".github/workflows/main.yml",
+      "start_line": 10,
+      "end_line": 22
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'Release' step [Uses Step](1) uses 'pypa/gh-action-pypi-publish' with ref 'release/v1', not a pinned commit hash",
+      "file": ".github/workflows/release.yml",
+      "start_line": 51,
+      "end_line": 51
+    },
+    {
+      "rule_id": "actions/missing-workflow-permissions",
+      "rule_name": "Workflow does not contain permissions",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-275",
+      "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+      "file": ".github/workflows/release.yml",
+      "start_line": 53,
+      "end_line": 76
+    }
+  ]
+}

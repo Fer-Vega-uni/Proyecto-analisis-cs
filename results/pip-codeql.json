@@ -1,0 +1,131 @@
+{
+  "repo": "pip",
+  "analysis": "code",
+  "language": "python",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 10,
+  "findings": [
+    {
+      "rule_id": "py/clear-text-logging-sensitive-data",
+      "rule_name": "Clear-text logging of sensitive information",
+      "severity": "high",
+      "security_severity": 7.5,
+      "level": "error",
+      "cwe": "CWE-312, CWE-359, CWE-532",
+      "message": "This expression logs [sensitive data (secret)](1) as clear text.\nThis expression logs [sensitive data (secret)](2) as clear text.\nThis expression logs [sensitive data (secret)](2) as clear text.\nThis expression logs [sensitive data (secret)](2) as clear text.\nThis expression logs [sensitive data (secret)](2) as clear text.\nThis expression logs [sensitive data (secret)](3) as clear text.\nThis expression logs [sensitive data (secret)](4) as clear text.\nThis expression logs [sensitive data (secret)](5) as clear text.\nThis expression logs [sensitive data (secret)](6) as clear text.\nThis expression logs [sensitive data (secret)](7) as clear text.\nThis expression logs [sensitive data (secret)](8) as clear text.",
+      "file": "src/pip/_internal/network/session.py",
+      "start_line": 422,
+      "end_line": 422
+    },
+    {
+      "rule_id": "py/tarslip",
+      "rule_name": "Arbitrary file write during tarfile extraction",
+      "severity": "high",
+      "security_severity": 7.5,
+      "level": "error",
+      "cwe": "CWE-22",
+      "message": "This file extraction depends on a [potentially untrusted source](1).",
+      "file": "src/pip/_vendor/distlib/util.py",
+      "start_line": 1307,
+      "end_line": 1307
+    },
+    {
+      "rule_id": "py/insecure-protocol",
+      "rule_name": "Use of insecure SSL/TLS version",
+      "severity": "high",
+      "security_severity": 7.5,
+      "level": "warning",
+      "cwe": "CWE-327",
+      "message": "Insecure SSL/TLS protocol version TLSv1 allowed by [call to ssl.SSLContext](1).\nInsecure SSL/TLS protocol version TLSv1_1 allowed by [call to ssl.SSLContext](1).",
+      "file": "src/pip/_vendor/distlib/util.py",
+      "start_line": 1504,
+      "end_line": 1504
+    },
+    {
+      "rule_id": "py/weak-sensitive-data-hashing",
+      "rule_name": "Use of a broken or weak cryptographic hashing algorithm on sensitive data",
+      "severity": "high",
+      "security_severity": 7.5,
+      "level": "warning",
+      "cwe": "CWE-327, CWE-328, CWE-916",
+      "message": "[Sensitive data (password)](1) is used in a hashing algorithm (MD5) that is insecure for password hashing, since it is not a computationally expensive hash function.\n[Sensitive data (id)](2) is used in a hashing algorithm (MD5) that is insecure.",
+      "file": "src/pip/_vendor/requests/auth.py",
+      "start_line": 179,
+      "end_line": 179
+    },
+    {
+      "rule_id": "py/weak-sensitive-data-hashing",
+      "rule_name": "Use of a broken or weak cryptographic hashing algorithm on sensitive data",
+      "severity": "high",
+      "security_severity": 7.5,
+      "level": "warning",
+      "cwe": "CWE-327, CWE-328, CWE-916",
+      "message": "[Sensitive data (password)](1) is used in a hashing algorithm (SHA1) that is insecure for password hashing, since it is not a computationally expensive hash function.\n[Sensitive data (id)](2) is used in a hashing algorithm (SHA1) that is insecure.",
+      "file": "src/pip/_vendor/requests/auth.py",
+      "start_line": 187,
+      "end_line": 187
+    },
+    {
+      "rule_id": "py/weak-sensitive-data-hashing",
+      "rule_name": "Use of a broken or weak cryptographic hashing algorithm on sensitive data",
+      "severity": "high",
+      "security_severity": 7.5,
+      "level": "warning",
+      "cwe": "CWE-327, CWE-328, CWE-916",
+      "message": "[Sensitive data (password)](1) is used in a hashing algorithm (SHA256) that is insecure for password hashing, since it is not a computationally expensive hash function.",
+      "file": "src/pip/_vendor/requests/auth.py",
+      "start_line": 195,
+      "end_line": 195
+    },
+    {
+      "rule_id": "py/weak-sensitive-data-hashing",
+      "rule_name": "Use of a broken or weak cryptographic hashing algorithm on sensitive data",
+      "severity": "high",
+      "security_severity": 7.5,
+      "level": "warning",
+      "cwe": "CWE-327, CWE-328, CWE-916",
+      "message": "[Sensitive data (password)](1) is used in a hashing algorithm (SHA512) that is insecure for password hashing, since it is not a computationally expensive hash function.",
+      "file": "src/pip/_vendor/requests/auth.py",
+      "start_line": 203,
+      "end_line": 203
+    },
+    {
+      "rule_id": "py/insecure-protocol",
+      "rule_name": "Use of insecure SSL/TLS version",
+      "severity": "high",
+      "security_severity": 7.5,
+      "level": "warning",
+      "cwe": "CWE-327",
+      "message": "Insecure SSL/TLS protocol version TLSv1 allowed by [call to SSLContext](1).\nInsecure SSL/TLS protocol version TLSv1_1 allowed by [call to SSLContext](1).",
+      "file": "src/pip/_vendor/urllib3/util/ssl_.py",
+      "start_line": 477,
+      "end_line": 477
+    },
+    {
+      "rule_id": "py/overly-permissive-file",
+      "rule_name": "Overly permissive file permissions",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-732",
+      "message": "Overly permissive mask in chmod sets file to world writable.",
+      "file": "tests/lib/filesystem.py",
+      "start_line": 30,
+      "end_line": 30
+    },
+    {
+      "rule_id": "py/incomplete-url-substring-sanitization",
+      "rule_name": "Incomplete URL substring sanitization",
+      "severity": "high",
+      "security_severity": 7.8,
+      "level": "warning",
+      "cwe": "CWE-20",
+      "message": "The string [https://example.com/](1) may be at an arbitrary position in the sanitized URL.",
+      "file": "tests/unit/test_network_session.py",
+      "start_line": 186,
+      "end_line": 186
+    }
+  ]
+}

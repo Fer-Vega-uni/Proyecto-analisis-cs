@@ -1,0 +1,25 @@
+{
+  "repo": "pipx",
+  "analysis": "dependencies",
+  "grype_version": "0.120.0",
+  "status": "ok",
+  "error": null,
+  "total_findings": 1,
+  "findings": [
+    {
+      "vuln_id": "GHSA-fj7x-q9j7-g6q6",
+      "cve": "CVE-2024-21503",
+      "severity": "medium",
+      "cvss_score": 5.3,
+      "package": "black",
+      "version": "22.8.0",
+      "ecosystem": "python",
+      "fix_state": "fixed",
+      "fix_versions": "24.3.0",
+      "file": "testdata/test_package_specifier/local_extras/setup.py",
+      "description": "Black vulnerable to Regular Expression Denial of Service (ReDoS)",
+      "url": "https://github.com/advisories/GHSA-fj7x-q9j7-g6q6"
+    }
+  ],
+  "db_built": "2026-10-03T06:31:58Z"
+}

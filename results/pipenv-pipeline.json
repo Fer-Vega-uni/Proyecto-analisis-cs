@@ -1,0 +1,59 @@
+{
+  "repo": "pipenv",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 4,
+  "findings": [
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'Generate Changelog' step [Uses Step: generate](1) uses 'mistricky/ccc' with ref 'v0.2.6', not a pinned commit hash",
+      "file": ".github/workflows/changelog.yml",
+      "start_line": 27,
+      "end_line": 27
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'Generate Changelog' step [Uses Step](1) uses 'softprops/action-gh-release' with ref 'v3', not a pinned commit hash",
+      "file": ".github/workflows/changelog.yml",
+      "start_line": 34,
+      "end_line": 34
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'Upload Python Package' step [Uses Step: create_release](1) uses 'ncipollo/release-action' with ref 'v1', not a pinned commit hash",
+      "file": ".github/workflows/pypi_upload.yml",
+      "start_line": 26,
+      "end_line": 26
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'Upload Python Package' step [Uses Step](1) uses 'pypa/gh-action-pypi-publish' with ref 'release/v1', not a pinned commit hash",
+      "file": ".github/workflows/pypi_upload.yml",
+      "start_line": 60,
+      "end_line": 60
+    }
+  ]
+}

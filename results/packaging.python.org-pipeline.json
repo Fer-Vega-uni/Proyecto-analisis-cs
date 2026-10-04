@@ -1,0 +1,23 @@
+{
+  "repo": "packaging.python.org",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 1,
+  "findings": [
+    {
+      "rule_id": "actions/missing-workflow-permissions",
+      "rule_name": "Workflow does not contain permissions",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-275",
+      "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+      "file": ".github/workflows/cron.yml",
+      "start_line": 11,
+      "end_line": 12
+    }
+  ]
+}

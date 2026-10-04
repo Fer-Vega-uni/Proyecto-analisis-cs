@@ -1,0 +1,23 @@
+{
+  "repo": "browntruck",
+  "analysis": "code",
+  "language": "python",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 1,
+  "findings": [
+    {
+      "rule_id": "py/full-ssrf",
+      "rule_name": "Full server-side request forgery",
+      "severity": "critical",
+      "security_severity": 9.1,
+      "level": "error",
+      "cwe": "CWE-918",
+      "message": "The full URL of this request depends on a [user-provided value](1).",
+      "file": "browntruck/news.py",
+      "start_line": 92,
+      "end_line": 92
+    }
+  ]
+}

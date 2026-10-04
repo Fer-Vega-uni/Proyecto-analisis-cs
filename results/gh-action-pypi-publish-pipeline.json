@@ -1,0 +1,47 @@
+{
+  "repo": "gh-action-pypi-publish",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 3,
+  "findings": [
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action '🏗️' step [Uses Step](1) uses 're-actors/alls-green' with ref 'release/v1', not a pinned commit hash",
+      "file": ".github/workflows/build-and-push-docker-image.yml",
+      "start_line": 36,
+      "end_line": 36
+    },
+    {
+      "rule_id": "actions/code-injection/medium",
+      "rule_name": "Code injection",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-94, CWE-95, CWE-116",
+      "message": "Potential code injection in [${{\n  steps.pre-installed-python.outputs.python-path == ''\n  && steps.new-python.outputs.python-path\n  || steps.pre-installed-python.outputs.python-path\n}}](1), which may be controlled by an external user.",
+      "file": "action.yml",
+      "start_line": 129,
+      "end_line": 129
+    },
+    {
+      "rule_id": "actions/code-injection/medium",
+      "rule_name": "Code injection",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-94, CWE-95, CWE-116",
+      "message": "Potential code injection in [${{ github.action_path }}](1), which may be controlled by an external user.",
+      "file": "action.yml",
+      "start_line": 133,
+      "end_line": 133
+    }
+  ]
+}

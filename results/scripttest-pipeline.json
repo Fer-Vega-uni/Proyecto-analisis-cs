@@ -1,0 +1,71 @@
+{
+  "repo": "scripttest",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 5,
+  "findings": [
+    {
+      "rule_id": "actions/missing-workflow-permissions",
+      "rule_name": "Workflow does not contain permissions",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-275",
+      "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+      "file": ".github/workflows/ci.yaml",
+      "start_line": 9,
+      "end_line": 16
+    },
+    {
+      "rule_id": "actions/missing-workflow-permissions",
+      "rule_name": "Workflow does not contain permissions",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-275",
+      "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+      "file": ".github/workflows/ci.yaml",
+      "start_line": 17,
+      "end_line": 23
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'CI' step [Uses Step](1) uses 'pre-commit/action' with ref 'v3.0.1', not a pinned commit hash",
+      "file": ".github/workflows/ci.yaml",
+      "start_line": 21,
+      "end_line": 21
+    },
+    {
+      "rule_id": "actions/missing-workflow-permissions",
+      "rule_name": "Workflow does not contain permissions",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-275",
+      "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+      "file": ".github/workflows/ci.yaml",
+      "start_line": 24,
+      "end_line": 44
+    },
+    {
+      "rule_id": "actions/missing-workflow-permissions",
+      "rule_name": "Workflow does not contain permissions",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-275",
+      "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+      "file": ".github/workflows/ci.yaml",
+      "start_line": 45,
+      "end_line": 58
+    }
+  ]
+}

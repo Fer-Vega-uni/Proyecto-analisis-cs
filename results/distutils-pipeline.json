@@ -1,0 +1,59 @@
+{
+  "repo": "distutils",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 4,
+  "findings": [
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'tests' step [Uses Step](1) uses 'cygwin/cygwin-install-action' with ref 'v2', not a pinned commit hash",
+      "file": ".github/workflows/main.yml",
+      "start_line": 114,
+      "end_line": 114
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'tests' step [Uses Step](1) uses 'msys2/setup-msys2' with ref 'v2', not a pinned commit hash",
+      "file": ".github/workflows/main.yml",
+      "start_line": 149,
+      "end_line": 149
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'tests' step [Uses Step](1) uses 'msys2/setup-msys2' with ref 'v2', not a pinned commit hash",
+      "file": ".github/workflows/main.yml",
+      "start_line": 195,
+      "end_line": 195
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'tests' step [Uses Step](1) uses 're-actors/alls-green' with ref 'release/v1', not a pinned commit hash",
+      "file": ".github/workflows/main.yml",
+      "start_line": 259,
+      "end_line": 259
+    }
+  ]
+}

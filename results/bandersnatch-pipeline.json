@@ -1,0 +1,95 @@
+{
+  "repo": "bandersnatch",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 7,
+  "findings": [
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'bandersnatch_ci' step [Uses Step](1) uses 'codecov/codecov-action' with ref 'v7', not a pinned commit hash",
+      "file": ".github/workflows/ci.yml",
+      "start_line": 56,
+      "end_line": 56
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'bandersnatch_ci_ubuntu' step [Uses Step](1) uses 'codecov/codecov-action' with ref 'v7', not a pinned commit hash",
+      "file": ".github/workflows/ci_ubuntu.yml",
+      "start_line": 56,
+      "end_line": 56
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'bandersnatch_docker_upload' step [Uses Step](1) uses 'docker/setup-qemu-action' with ref 'v4', not a pinned commit hash",
+      "file": ".github/workflows/docker_upload.yml",
+      "start_line": 22,
+      "end_line": 22
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'bandersnatch_docker_upload' step [Uses Step](1) uses 'docker/setup-buildx-action' with ref 'v4', not a pinned commit hash",
+      "file": ".github/workflows/docker_upload.yml",
+      "start_line": 25,
+      "end_line": 25
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'bandersnatch_docker_upload' step [Uses Step](1) uses 'docker/login-action' with ref 'v4.6.0', not a pinned commit hash",
+      "file": ".github/workflows/docker_upload.yml",
+      "start_line": 28,
+      "end_line": 28
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'bandersnatch_docker_upload' step [Uses Step](1) uses 'docker/build-push-action' with ref 'v7', not a pinned commit hash",
+      "file": ".github/workflows/docker_upload.yml",
+      "start_line": 39,
+      "end_line": 39
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'bandersnatch_docker_upload' step [Uses Step](1) uses 'docker/build-push-action' with ref 'v7', not a pinned commit hash",
+      "file": ".github/workflows/docker_upload.yml",
+      "start_line": 53,
+      "end_line": 53
+    }
+  ]
+}

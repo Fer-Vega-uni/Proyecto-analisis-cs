@@ -15,8 +15,9 @@ Junta todos los resultados del Miner en dos tablas CSV, listas para el Analyzer:
 Severidad normalizada (misma escala para ambas herramientas):
     critical, high, medium, low, negligible, unknown
 
-Área de la ubicación (para separar código real de pruebas o documentación):
-    source, test, docs, example, ci
+Área de la ubicación (para separar código propio de pruebas, documentación
+o código de terceros copiado dentro del repo):
+    source, vendor, test, docs, example, ci
 
 Uso:
     .venv/bin/python miner/build_dataset.py
@@ -57,6 +58,9 @@ def clasificar_area(ruta: str | None, finding_type: str) -> str:
         return "source"
     partes = [p.lower() for p in ruta.split(",")[0].strip().split("/")]
     archivo = partes[-1]
+    # Código de terceros copiado dentro del repo (vendoring), por ejemplo pip/_vendor
+    if any(p in ("_vendor", "vendor", "vendored", "patched", "third_party") for p in partes):
+        return "vendor"
     if any(p in ("test", "tests", "testing") for p in partes) or archivo.startswith("test_"):
         return "test"
     if any(p in ("doc", "docs", "documentation") for p in partes):

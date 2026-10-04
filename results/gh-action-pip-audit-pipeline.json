@@ -1,0 +1,47 @@
+{
+  "repo": "gh-action-pip-audit",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 3,
+  "findings": [
+    {
+      "rule_id": "actions/code-injection/medium",
+      "rule_name": "Code injection",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-94, CWE-95, CWE-116",
+      "message": "Potential code injection in [${{ github.action_path }}](1), which may be controlled by an external user.",
+      "file": "action.yml",
+      "start_line": 71,
+      "end_line": 71
+    },
+    {
+      "rule_id": "actions/code-injection/medium",
+      "rule_name": "Code injection",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-94, CWE-95, CWE-116",
+      "message": "Potential code injection in [${{ github.action_path }}](1), which may be controlled by an external user.",
+      "file": "action.yml",
+      "start_line": 80,
+      "end_line": 80
+    },
+    {
+      "rule_id": "actions/code-injection/medium",
+      "rule_name": "Code injection",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-94, CWE-95, CWE-116",
+      "message": "Potential code injection in [${{ github.action_path }}](1), which may be controlled by an external user.",
+      "file": "action.yml",
+      "start_line": 82,
+      "end_line": 82
+    }
+  ]
+}

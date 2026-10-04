@@ -1,0 +1,119 @@
+{
+  "repo": "setuptools",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 9,
+  "findings": [
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Job [Job: linux](1) in 'Run Sage CI for Linux' uses reusable workflow 'sagemath/sage/.github/workflows/docker.yml' with ref 'develop', not a pinned commit hash",
+      "file": ".github/workflows/ci-sage.yml",
+      "start_line": 83,
+      "end_line": 83
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'tests' step [Uses Step](1) uses 're-actors/alls-green' with ref 'release/v1', not a pinned commit hash",
+      "file": ".github/workflows/main.yml",
+      "start_line": 91,
+      "end_line": 91
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'tests' step [Uses Step](1) uses 'cygwin/cygwin-install-action' with ref 'v4', not a pinned commit hash",
+      "file": ".github/workflows/main.yml",
+      "start_line": 116,
+      "end_line": 116
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'tests' step [Uses Step](1) uses 'codecov/codecov-action' with ref 'v4', not a pinned commit hash",
+      "file": ".github/workflows/main.yml",
+      "start_line": 152,
+      "end_line": 152
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'tests' step [Uses Step: changed-files-specific-distutils](1) uses 'tj-actions/changed-files' with ref 'v46', not a pinned commit hash",
+      "file": ".github/workflows/main.yml",
+      "start_line": 173,
+      "end_line": 173
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'tests' step [Uses Step: changed-files-specific-vendor](1) uses 'tj-actions/changed-files' with ref 'v46', not a pinned commit hash",
+      "file": ".github/workflows/main.yml",
+      "start_line": 179,
+      "end_line": 179
+    },
+    {
+      "rule_id": "actions/missing-workflow-permissions",
+      "rule_name": "Workflow does not contain permissions",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-275",
+      "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+      "file": ".github/workflows/pyright.yml",
+      "start_line": 41,
+      "end_line": 77
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'pyright' step [Uses Step](1) uses 'jakebailey/pyright-action' with ref 'v2', not a pinned commit hash",
+      "file": ".github/workflows/pyright.yml",
+      "start_line": 73,
+      "end_line": 73
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'Test Suite' step [Uses Step](1) uses 'codecov/codecov-action' with ref 'v4', not a pinned commit hash",
+      "file": ".github/workflows/test-suite.yml",
+      "start_line": 120,
+      "end_line": 120
+    }
+  ]
+}

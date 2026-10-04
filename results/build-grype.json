@@ -1,0 +1,10 @@
+{
+  "repo": "build",
+  "analysis": "dependencies",
+  "grype_version": "0.120.0",
+  "status": "ok",
+  "error": null,
+  "total_findings": 0,
+  "findings": [],
+  "db_built": "2026-10-03T06:31:58Z"
+}

@@ -1,0 +1,39 @@
+{
+  "repo": "trove-classifiers",
+  "analysis": "dependencies",
+  "grype_version": "0.120.0",
+  "status": "ok",
+  "error": null,
+  "total_findings": 2,
+  "findings": [
+    {
+      "vuln_id": "GHSA-cxww-7g56-2vh6",
+      "cve": null,
+      "severity": "high",
+      "cvss_score": 8.6,
+      "package": "actions/download-artifact",
+      "version": "v4",
+      "ecosystem": "github-action",
+      "fix_state": "fixed",
+      "fix_versions": "4.1.3",
+      "file": ".github/workflows/release.yml",
+      "description": "@actions/download-artifact has an Arbitrary File Write via artifact extraction",
+      "url": "https://github.com/advisories/GHSA-cxww-7g56-2vh6"
+    },
+    {
+      "vuln_id": "GHSA-vxmw-7h4f-hqxh",
+      "cve": null,
+      "severity": "low",
+      "cvss_score": 0.0,
+      "package": "pypa/gh-action-pypi-publish",
+      "version": "release/v1",
+      "ecosystem": "github-action",
+      "fix_state": "fixed",
+      "fix_versions": "1.13.0",
+      "file": ".github/workflows/release.yml",
+      "description": "PyPI publish GitHub Action vulnerable to injectable expression expansions in action steps",
+      "url": "https://github.com/advisories/GHSA-vxmw-7h4f-hqxh"
+    }
+  ],
+  "db_built": "2026-10-03T06:31:58Z"
+}

@@ -1,0 +1,83 @@
+{
+  "repo": "wheel",
+  "analysis": "pipeline",
+  "language": "actions",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 6,
+  "findings": [
+    {
+      "rule_id": "actions/missing-workflow-permissions",
+      "rule_name": "Workflow does not contain permissions",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-275",
+      "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+      "file": ".github/workflows/publish.yml",
+      "start_line": 13,
+      "end_line": 31
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'Publish packages to PyPI' step [Uses Step](1) uses 'pypa/gh-action-pypi-publish' with ref 'release/v1', not a pinned commit hash",
+      "file": ".github/workflows/publish.yml",
+      "start_line": 41,
+      "end_line": 41
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'Publish packages to PyPI' step [Uses Step: changelog](1) uses 'agronholm/release-notes' with ref 'v1', not a pinned commit hash",
+      "file": ".github/workflows/publish.yml",
+      "start_line": 52,
+      "end_line": 52
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'Publish packages to PyPI' step [Uses Step](1) uses 'ncipollo/release-action' with ref 'v1', not a pinned commit hash",
+      "file": ".github/workflows/publish.yml",
+      "start_line": 56,
+      "end_line": 56
+    },
+    {
+      "rule_id": "actions/missing-workflow-permissions",
+      "rule_name": "Workflow does not contain permissions",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-275",
+      "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+      "file": ".github/workflows/test.yml",
+      "start_line": 13,
+      "end_line": 52
+    },
+    {
+      "rule_id": "actions/unpinned-tag",
+      "rule_name": "Unpinned tag for a non-immutable Action or reusable workflow",
+      "severity": "medium",
+      "security_severity": 5.0,
+      "level": "warning",
+      "cwe": "CWE-829",
+      "message": "Unpinned 3rd party Action 'Run the test suite' step [Uses Step](1) uses 'codecov/codecov-action' with ref 'v5', not a pinned commit hash",
+      "file": ".github/workflows/test.yml",
+      "start_line": 48,
+      "end_line": 48
+    }
+  ]
+}
