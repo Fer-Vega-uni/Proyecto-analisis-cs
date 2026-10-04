@@ -23,7 +23,7 @@ from generate_github_api import (GetReposGitHubAPI, ORGANIZACION, MAXIMO_REPOS,
 from generate_sboms import SBOMGenerator
 from generate_codeql import CodeQLAnalyzer
 from generate_grype import GrypeAnalyzer
-
+from build_dataset import build
 
 def paso(numero: int, titulo: str) -> float:
     print(f"\n========== Paso {numero}: {titulo} ==========")
@@ -53,6 +53,10 @@ def main():
 
     t = paso(4, "Analizar dependencias con Grype")
     GrypeAnalyzer(RUTA_RESULTADOS).run()
+    fin(t)
+    
+    t = paso(5, "Construir el dataset estructurado")
+    build()
     fin(t)
 
     total = (time.time() - inicio_total) / 60

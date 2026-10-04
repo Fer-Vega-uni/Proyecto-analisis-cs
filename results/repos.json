@@ -1,0 +1,222 @@
+[
+  {
+    "repo": "scrapy",
+    "full_name": "scrapy/scrapy",
+    "url": "https://github.com/scrapy/scrapy",
+    "language": "Python",
+    "stars": 64558,
+    "archived": false,
+    "commit_sha": "e49bc32d0ed875f4958bbe28210d5319e9f2c9ae",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "scrapyd",
+    "full_name": "scrapy/scrapyd",
+    "url": "https://github.com/scrapy/scrapyd",
+    "language": "Python",
+    "stars": 3098,
+    "archived": false,
+    "commit_sha": "7e8b2533c647c3bab06c2ac683f97b881dd9228b",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "dirbot",
+    "full_name": "scrapy/dirbot",
+    "url": "https://github.com/scrapy/dirbot",
+    "language": "Python",
+    "stars": 1628,
+    "archived": false,
+    "commit_sha": "8e995447361ad83f6693d2e07d17d90912268ace",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "parsel",
+    "full_name": "scrapy/parsel",
+    "url": "https://github.com/scrapy/parsel",
+    "language": "Python",
+    "stars": 1362,
+    "archived": false,
+    "commit_sha": "3d4199ad00af87619c636b1894df3a634e54f715",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "quotesbot",
+    "full_name": "scrapy/quotesbot",
+    "url": "https://github.com/scrapy/quotesbot",
+    "language": "Python",
+    "stars": 1361,
+    "archived": false,
+    "commit_sha": "16ec3f4176db67ca9132f7e4431d7823e5e28974",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "scrapyd-client",
+    "full_name": "scrapy/scrapyd-client",
+    "url": "https://github.com/scrapy/scrapyd-client",
+    "language": "Python",
+    "stars": 770,
+    "archived": false,
+    "commit_sha": "c6aa9d58170259d4a76115dacd605642dbd51da2",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "cssselect",
+    "full_name": "scrapy/cssselect",
+    "url": "https://github.com/scrapy/cssselect",
+    "language": "Python",
+    "stars": 311,
+    "archived": false,
+    "commit_sha": "cf86ab900281f97be409bcb21c6ee25a49a58ed1",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "queuelib",
+    "full_name": "scrapy/queuelib",
+    "url": "https://github.com/scrapy/queuelib",
+    "language": "Python",
+    "stars": 300,
+    "archived": false,
+    "commit_sha": "885ef61c6ad9b61682329074f539cbb8c262a580",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "loginform",
+    "full_name": "scrapy/loginform",
+    "url": "https://github.com/scrapy/loginform",
+    "language": "Python",
+    "stars": 278,
+    "archived": false,
+    "commit_sha": "e61facef4927a581a94bf4aebdd0609b4c1317c9",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "itemadapter",
+    "full_name": "scrapy/itemadapter",
+    "url": "https://github.com/scrapy/itemadapter",
+    "language": "Python",
+    "stars": 69,
+    "archived": false,
+    "commit_sha": "2bb59ab88fd228da07d89bc76067fb9403ce6057",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "itemloaders",
+    "full_name": "scrapy/itemloaders",
+    "url": "https://github.com/scrapy/itemloaders",
+    "language": "Python",
+    "stars": 49,
+    "archived": false,
+    "commit_sha": "f3e680016d0fd49f24a656f440938ec14c0cd9db",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "scrapy-bench",
+    "full_name": "scrapy/scrapy-bench",
+    "url": "https://github.com/scrapy/scrapy-bench",
+    "language": "Python",
+    "stars": 32,
+    "archived": false,
+    "commit_sha": "48626327dc5d3b2195a16ad755b92174de123e35",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "scrapy-lint",
+    "full_name": "scrapy/scrapy-lint",
+    "url": "https://github.com/scrapy/scrapy-lint",
+    "language": "Python",
+    "stars": 22,
+    "archived": false,
+    "commit_sha": "6c2ce5b73f5ba971277315fdfd6019dcc8bd1c3d",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "scurl",
+    "full_name": "scrapy/scurl",
+    "url": "https://github.com/scrapy/scurl",
+    "language": "Python",
+    "stars": 21,
+    "archived": false,
+    "commit_sha": "fa5c05d95d02fcf34b794596027819ccb8e87736",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "pypydispatcher",
+    "full_name": "scrapy/pypydispatcher",
+    "url": "https://github.com/scrapy/pypydispatcher",
+    "language": "Python",
+    "stars": 16,
+    "archived": false,
+    "commit_sha": "3bee78abf29e04ffd4ee73e7b2419f9c58a3c71c",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "xtractmime",
+    "full_name": "scrapy/xtractmime",
+    "url": "https://github.com/scrapy/xtractmime",
+    "language": "Python",
+    "stars": 13,
+    "archived": false,
+    "commit_sha": "9d50fcb0d7abd7a96f7dee746d9285faba4af6db",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "frostwork",
+    "full_name": "scrapy/frostwork",
+    "url": "https://github.com/scrapy/frostwork",
+    "language": "Python",
+    "stars": 13,
+    "archived": false,
+    "commit_sha": "d8ef1a1b7bcb76a60821bf13fe7d19e224bc01a9",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "scrapy-mcp-official",
+    "full_name": "scrapy/scrapy-mcp-official",
+    "url": "https://github.com/scrapy/scrapy-mcp-official",
+    "language": "Python",
+    "stars": 11,
+    "archived": false,
+    "commit_sha": "5530c671a7078f4f06479422c623d10b846d3db9",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "form2request",
+    "full_name": "scrapy/form2request",
+    "url": "https://github.com/scrapy/form2request",
+    "language": "Python",
+    "stars": 5,
+    "archived": false,
+    "commit_sha": "a251597d9fa44cbd03736ec1da37f85593dfe820",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "sphinx-scrapy",
+    "full_name": "scrapy/sphinx-scrapy",
+    "url": "https://github.com/scrapy/sphinx-scrapy",
+    "language": "Python",
+    "stars": 3,
+    "archived": false,
+    "commit_sha": "52f14275a06d15b7de3b6ecadacbd7ff46ac4764",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "formerly",
+    "full_name": "scrapy/formerly",
+    "url": "https://github.com/scrapy/formerly",
+    "language": "Python",
+    "stars": 2,
+    "archived": false,
+    "commit_sha": "acddfe4121064c95fceb32ae285f9ef596f57321",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "sphinx-llm-friendly",
+    "full_name": "scrapy/sphinx-llm-friendly",
+    "url": "https://github.com/scrapy/sphinx-llm-friendly",
+    "language": "Python",
+    "stars": 2,
+    "archived": false,
+    "commit_sha": "736c61787ec84a3b88fbc2690babe826527d0da8",
+    "clone_status": "ok"
+  }
+]

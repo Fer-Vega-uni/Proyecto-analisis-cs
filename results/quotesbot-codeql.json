@@ -1,0 +1,10 @@
+{
+  "repo": "quotesbot",
+  "analysis": "code",
+  "language": "python",
+  "codeql_version": "2.27.1",
+  "status": "ok",
+  "error": null,
+  "total_findings": 0,
+  "findings": []
+}
