@@ -6,6 +6,7 @@ Pasos:
 2. Genera el SBOM de cada repositorio (Syft).
 3. Analiza el código fuente y los workflows (CodeQL).
 4. Busca vulnerabilidades en las dependencias (Grype).
+5. Construye el dataset estructurado (results/dataset/).
 
 Cada paso omite lo que ya fue procesado, así que si la ejecución se
 interrumpe, basta con volver a ejecutarla para continuar donde quedó.
