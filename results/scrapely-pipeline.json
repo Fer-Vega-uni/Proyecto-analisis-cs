@@ -1,0 +1,10 @@
+{
+  "repo": "scrapely",
+  "analysis": "pipeline",
+  "language": null,
+  "codeql_version": "2.27.1",
+  "status": "no_workflows",
+  "error": null,
+  "total_findings": 0,
+  "findings": []
+}

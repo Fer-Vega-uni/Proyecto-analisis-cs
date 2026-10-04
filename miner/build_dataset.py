@@ -9,6 +9,8 @@ Junta todos los resultados del Miner en dos tablas CSV, listas para el Analyzer:
 
 2. results/dataset/repos.csv -> una fila por repositorio analizado, incluidos
    los que no tienen hallazgos, con su estado y conteos por severidad.
+   "language" es la etiqueta de GitHub; "analyzed_language" es el lenguaje
+   que realmente analizó CodeQL.
 
 Severidad normalizada (misma escala para ambas herramientas):
     critical, high, medium, low, negligible, unknown
@@ -37,7 +39,7 @@ COLUMNAS_HALLAZGOS = [
 ]
 
 COLUMNAS_REPOS = [
-    "repo", "url", "language", "stars", "commit_sha", "packages",
+    "repo", "url", "language", "analyzed_language", "stars", "commit_sha", "packages",
     "codeql_status", "pipeline_status", "grype_status",
     "total_findings", "code_findings", "ci_findings", "dependency_findings",
 ] + [f"{s}_findings" for s in SEVERIDADES]
@@ -155,6 +157,7 @@ def build() -> None:
             "repo": nombre,
             "url": meta["url"],
             "language": meta["language"],
+            "analyzed_language": codeql["language"] if codeql else None,
             "stars": meta["stars"],
             "commit_sha": meta["commit_sha"],
             "packages": contar_paquetes(nombre),

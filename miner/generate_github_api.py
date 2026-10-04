@@ -3,7 +3,9 @@ Obtención y clonación de repositorios de GitHub.
 
 Proceso:
 1. Consulta la API de GitHub para listar los repositorios públicos de la organización.
-2. Filtra los repositorios útiles: sin forks, sin archivados y con lenguaje soportado.
+2. Filtra los repositorios útiles: sin forks, sin archivados y con código en un
+   lenguaje soportado. Si GitHub etiqueta el repo con otro lenguaje (por ejemplo
+   HTML, por sus archivos de prueba), se revisan los porcentajes reales de código.
 3. Ordena por estrellas (más populares primero) y toma hasta la cantidad pedida.
 4. Clona cada repositorio (solo el último commit) en miner/repos/.
 5. Guarda los metadatos de cada repo en results/repos.json.
@@ -32,6 +34,9 @@ RUTA_RESULTADOS = RUTA_BASE / "results"
 
 ORGANIZACION = "scrapy"
 LENGUAJES_SOPORTADOS = ["Python", "JavaScript", "TypeScript"]
+# Lenguajes compilados: CodeQL necesita compilar estos proyectos, así que se excluyen
+# aunque contengan algunos archivos Python o JavaScript.
+LENGUAJES_COMPILADOS = ["C", "C++", "Java", "C#", "Go", "Rust", "Kotlin", "Swift", "Shell"]
 MINIMO_REPOS = 20
 MAXIMO_REPOS = 50
 
@@ -78,15 +83,32 @@ class GetReposGitHubAPI:
 
         return repos
 
+    def has_supported_code(self, repo: dict) -> bool:
+        """Revisa si el repo tiene código en un lenguaje soportado.
+
+        GitHub asigna el lenguaje principal según los bytes de cada lenguaje, así que
+        librerías de Python con muchos archivos de prueba en HTML pueden quedar
+        etiquetadas como HTML. En esos casos se consultan los lenguajes reales del repo.
+        """
+        if repo["language"] in LENGUAJES_SOPORTADOS:
+            return True
+        if repo["language"] is None or repo["language"] in LENGUAJES_COMPILADOS:
+            return False
+        response = requests.get(repo["languages_url"], headers=self.headers, timeout=30)
+        if response.status_code != 200:
+            return False
+        lenguajes = response.json()
+        return any(lenguajes.get(lenguaje, 0) > 0 for lenguaje in LENGUAJES_SOPORTADOS)
+
     def filter_useful_repos(self, repos: list[dict], incluir_archivados: bool = False) -> list[dict]:
-        """Filtra repos sin forks, con lenguaje soportado y, opcionalmente, sin archivados."""
+        """Filtra repos sin forks, con código soportado y, opcionalmente, sin archivados."""
         utiles = []
         for repo in repos:
             if repo["fork"]:
                 continue
             if repo["archived"] and not incluir_archivados:
                 continue
-            if repo["language"] not in LENGUAJES_SOPORTADOS:
+            if not self.has_supported_code(repo):
                 continue
             utiles.append(repo)
         return utiles

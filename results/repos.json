@@ -4,7 +4,7 @@
     "full_name": "scrapy/scrapy",
     "url": "https://github.com/scrapy/scrapy",
     "language": "Python",
-    "stars": 64558,
+    "stars": 64569,
     "archived": false,
     "commit_sha": "e49bc32d0ed875f4958bbe28210d5319e9f2c9ae",
     "clone_status": "ok"
@@ -17,6 +17,16 @@
     "stars": 3098,
     "archived": false,
     "commit_sha": "7e8b2533c647c3bab06c2ac683f97b881dd9228b",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "scrapely",
+    "full_name": "scrapy/scrapely",
+    "url": "https://github.com/scrapy/scrapely",
+    "language": "HTML",
+    "stars": 1885,
+    "archived": false,
+    "commit_sha": "31b5881bed01a99be2b65b30b9c81ad65a517eaf",
     "clone_status": "ok"
   },
   {
@@ -60,6 +70,16 @@
     "clone_status": "ok"
   },
   {
+    "repo": "w3lib",
+    "full_name": "scrapy/w3lib",
+    "url": "https://github.com/scrapy/w3lib",
+    "language": "HTML",
+    "stars": 419,
+    "archived": false,
+    "commit_sha": "c0352eb9d2a729dd597ebae55206669fff4edb8d",
+    "clone_status": "ok"
+  },
+  {
     "repo": "cssselect",
     "full_name": "scrapy/cssselect",
     "url": "https://github.com/scrapy/cssselect",
@@ -87,6 +107,16 @@
     "stars": 278,
     "archived": false,
     "commit_sha": "e61facef4927a581a94bf4aebdd0609b4c1317c9",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "protego",
+    "full_name": "scrapy/protego",
+    "url": "https://github.com/scrapy/protego",
+    "language": "DIGITAL Command Language",
+    "stars": 94,
+    "archived": false,
+    "commit_sha": "1e3bf727402ca02b70bf3b16b1ba4c5d2ef3fe4a",
     "clone_status": "ok"
   },
   {
@@ -217,6 +247,16 @@
     "stars": 2,
     "archived": false,
     "commit_sha": "736c61787ec84a3b88fbc2690babe826527d0da8",
+    "clone_status": "ok"
+  },
+  {
+    "repo": "unattended-pr-guard",
+    "full_name": "scrapy/unattended-pr-guard",
+    "url": "https://github.com/scrapy/unattended-pr-guard",
+    "language": "JavaScript",
+    "stars": 0,
+    "archived": false,
+    "commit_sha": "d8003c0c9300a3a2344262be9357961109ee1228",
     "clone_status": "ok"
   }
 ]
