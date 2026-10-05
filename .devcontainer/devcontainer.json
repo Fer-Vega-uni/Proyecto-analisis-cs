@@ -10,12 +10,13 @@
             "version": "20"
         }
     },
+    "forwardPorts": [8000],
     "runArgs": ["--platform=linux/amd64"],
     "postCreateCommand": "bash .devcontainer/post-create.sh",
     "remoteUser": "vscode",
     "customizations": {
         "vscode": {
-                        "settings": {
+            "settings": {
                 "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
                 "python.analysis.exclude": ["miner/repos/**"],
                 "files.watcherExclude": {"miner/repos/**": true},
