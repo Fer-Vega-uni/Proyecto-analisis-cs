@@ -1,0 +1,16 @@
+[
+    {
+        "tool":"codeql",
+        "critical":1,
+        "high":76,
+        "medium":78,
+        "low":0
+    },
+    {
+        "tool":"grype",
+        "critical":2,
+        "high":44,
+        "medium":83,
+        "low":27
+    }
+]

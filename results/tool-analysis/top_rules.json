@@ -1,0 +1,42 @@
+[
+    {
+        "rule_or_cwe":"CWE-829",
+        "count":44
+    },
+    {
+        "rule_or_cwe":"CWE-275",
+        "count":29
+    },
+    {
+        "rule_or_cwe":"CWE-22",
+        "count":24
+    },
+    {
+        "rule_or_cwe":"CWE-732",
+        "count":14
+    },
+    {
+        "rule_or_cwe":"CWE-20",
+        "count":11
+    },
+    {
+        "rule_or_cwe":"CWE-79",
+        "count":10
+    },
+    {
+        "rule_or_cwe":"CWE-327, CWE-328, CWE-916",
+        "count":8
+    },
+    {
+        "rule_or_cwe":"CWE-327",
+        "count":5
+    },
+    {
+        "rule_or_cwe":"CWE-94, CWE-95, CWE-116",
+        "count":5
+    },
+    {
+        "rule_or_cwe":"CWE-312, CWE-359, CWE-532",
+        "count":2
+    }
+]
