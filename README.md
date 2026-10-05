@@ -140,11 +140,48 @@ Se analizaron 38 repositorios (37 en Python y 1 en TypeScript) y se obtuvieron 3
 
 ## Analyzer
 
-*(Por completar)*
+El módulo Analyzer procesa los datasets consolidados (`findings.csv` y los reportes individuales en `results/`) para calcular distribuciones estadísticas y matrices de riesgo.
+
+### Ejecución y Generación de Datasets
+
+Los notebooks de análisis están ubicados en la carpeta `analyzer/` y en la raíz (`analyzer.ipynb`). Para ejecutar el flujo de agregación:
+
+1. Abre el notebook `analyzer.ipynb` en VS Code.
+2. Ejecuta todas las celdas (*Run All*).
+
+El notebook procesa los hallazgos y exporta los siguientes archivos JSON en `results/tool-analysis/`:
+- **`severity_summary.json`**: Conteo global de vulnerabilidades por nivel de severidad (`critical`, `high`, `medium`, `low`).
+- **`tool_summary.json`**: Distribución de hallazgos entre herramientas SAST (CodeQL) y SCA (Grype).
+- **`top_repos.json`**: Listado de los repositorios con mayor concentración de riesgo y vulnerabilidades.
+- **`ecosystem_summary.json`**: Desglose de afectación por entornos/ecosistemas.
+
+---
 
 ## Visualizer
 
-*(Por completar)*
+El módulo Visualizer es un dashboard web interactivo e independiente construido con **HTML5, CSS3 y D3.js (v7)**. Permite explorar visualmente los patrones de seguridad identificados.
+
+### Puesta en Marcha
+
+Para abrir la interfaz interactiva desde el contenedor:
+
+1. Abre la terminal en VS Code y ejecuta el servidor local de Python:
+   ```bash
+   python -m http.server 8000
+
+  Abre tu navegador e ingresa a:
+http://localhost:8000/visualizer/
+
+Componentes de la Interfaz
+Indicadores Clave (KPIs): Resumen de total de hallazgos (311), repositorios auditados (28) y nivel de riesgo predominante (MEDIUM - 51.8%).
+
+Distribución de Vulnerabilidades: Gráficos de barras interactivos por severidad.
+
+Proporción SAST vs SCA: Gráfico circular (Donut) con despiece proporcional entre CodeQL y Grype.
+
+Matriz de Severidad por Herramienta: Gráfico de barras horizontales apiladas que cruza el origen del hallazgo con la severidad.
+
+Top Repositorios: Tabla detallada de los proyectos más vulnerables (setuptools-scm, browntruck, hatch, etc.) con badge de riesgo y conteos.
 
 ## Reporter
 
