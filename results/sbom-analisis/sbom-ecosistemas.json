@@ -1,0 +1,10 @@
+[
+    {
+        "ecosystem":"grype",
+        "count":156
+    },
+    {
+        "ecosystem":"codeql",
+        "count":155
+    }
+]

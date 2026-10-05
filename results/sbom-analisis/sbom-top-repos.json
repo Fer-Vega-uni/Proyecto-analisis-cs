@@ -1,0 +1,22 @@
+[
+    {
+        "repo":"setuptools-scm",
+        "count":56
+    },
+    {
+        "repo":"browntruck",
+        "count":48
+    },
+    {
+        "repo":"hatch",
+        "count":41
+    },
+    {
+        "repo":"pipfile",
+        "count":24
+    },
+    {
+        "repo":"pipenv",
+        "count":19
+    }
+]

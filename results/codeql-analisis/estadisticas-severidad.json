@@ -1,0 +1,14 @@
+[
+    {
+        "level":"medium",
+        "count":78
+    },
+    {
+        "level":"high",
+        "count":76
+    },
+    {
+        "level":"critical",
+        "count":1
+    }
+]
