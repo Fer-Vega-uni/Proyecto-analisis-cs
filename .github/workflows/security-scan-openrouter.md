@@ -1,5 +1,7 @@
 ---
 description: "Workflow agéntico de auditoría de seguridad (OpenRouter)."
+on:
+  workflow_dispatch:
 permissions:
   contents: read
 engine:

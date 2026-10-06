@@ -1,21 +1,16 @@
 ---
-description: "Workflow agéntico de auditoría de seguridad (OpenRouter)."
+description: "Workflow agéntico de auditoría de seguridad (GitHub Copilot)."
+on:
+  workflow_dispatch:
 permissions:
   contents: read
+  copilot-requests: write
 engine:
-  id: codex
-  model: openai/gpt-5.6-luna
-env:
-  OPENAI_BASE_URL: https://openrouter.ai/api/v1
-  GH_AW_MODEL_AGENT_CODEX: openai/gpt-5.6-luna
-  GH_AW_MODEL_DETECTION_CODEX: openai/gpt-5.6-luna
-network:
-  allowed:
-    - defaults
-    - openrouter.ai
+  id: copilot
+  model: gpt-4.1
 ---
 
-# Auditoría de Seguridad DevSecOps (OpenRouter)
+# Auditoría de Seguridad DevSecOps (Copilot)
 
 You are an expert DevSecOps Security Auditor and Senior Code Reviewer.
 
@@ -33,5 +28,5 @@ Analyze the repository's files and configurations, inspect potential security vu
      - Best Practices Complied (*Mejores Prácticas Cumplidas*)
    - **LANGUAGE**: Write the entire generated report in Spanish.
 3. **Publish Report**: Call the `create_issue` safe-output action with:
-   - title: "Reporte de Auditoría de Seguridad DevSecOps (OpenRouter)"
+   - title: "Reporte de Auditoría de Seguridad DevSecOps (Copilot)"
    - body: The generated summary markdown.
