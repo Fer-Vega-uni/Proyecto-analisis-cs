@@ -4,13 +4,14 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  issues: write
 engine:
   id: codex
-  model: openai/gpt-5.6-luna
+  model: openai/gpt-4o
 env:
   OPENAI_BASE_URL: https://openrouter.ai/api/v1
-  GH_AW_MODEL_AGENT_CODEX: openai/gpt-5.6-luna
-  GH_AW_MODEL_DETECTION_CODEX: openai/gpt-5.6-luna
+  OPENAI_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+  CODEX_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 network:
   allowed:
     - defaults
